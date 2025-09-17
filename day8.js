@@ -204,3 +204,51 @@ btn10.onclick = () =>
     "Removed duplicates"
   );
 buttonsContainer.appendChild(btn10);
+
+
+function getMax(arr) {
+  let max = arr[0];
+  for (let i = 1; i < getLength(arr); i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+const btn11 = document.createElement("button");
+btn11.innerText = "Find Maximum";
+btn11.onclick = () => showResult(numbers, getMax(numbers), "Found the largest number in array");
+buttonsContainer.appendChild(btn11);
+
+function getMin(arr) {
+  let min = arr[0];
+  for (let i = 1; i < getLength(arr); i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return min;
+}
+
+const btn12 = document.createElement("button");
+btn12.innerText = "Find Minimum";
+btn12.onclick = () => showResult(numbers, getMin(numbers), "Found the smallest number in array");
+buttonsContainer.appendChild(btn12);
+
+function shuffleArray(arr) {
+  let newArr = [...arr];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = newArr[i];
+    newArr[i] = newArr[j];
+    newArr[j] = temp;
+  }
+  return newArr;
+}
+
+const btn13 = document.createElement("button");
+btn13.innerText = "Shuffle Array";
+btn13.onclick = () => showResult(numbers, shuffleArray(numbers), "Shuffled the array randomly");
+buttonsContainer.appendChild(btn13);
+
